@@ -45,11 +45,44 @@ const MenuTabs = () => {
           </div>
           <div className="flex justify-normal space-x-8 w-full">
             <div className="w-1/3">
+              <h2 className="font-bold mb-4 text-black">Clothings</h2>
+              <ul className="space-y-2">
+                {data?.clothing.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      href={`/products?category=${item?.toLowerCase()}`}
+                      className="text-black"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="w-1/3">
               <h2 className="font-bold mb-4 text-black">Shoes</h2>
               <ul className="space-y-2">
                 {data?.shoes.map((item, index) => (
                   <li key={index}>
-                    <Link href={`/products?category=${item?.toLowerCase()}`}>
+                    <Link
+                      href={`/products?category=${item?.toLowerCase()}`}
+                      className="text-black"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="w-1/3">
+              <h2 className="font-bold mb-4 text-black">Accessories</h2>
+              <ul className="space-y-2">
+                {data?.accessories.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      href={`/products?category=${item?.toLowerCase()}`}
+                      className="text-black"
+                    >
                       {item}
                     </Link>
                   </li>
