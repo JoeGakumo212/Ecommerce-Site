@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -20,7 +20,27 @@
 }
 
 body {
-  background: var(--background);
+  background: #fff !important;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner .slick-dots {
+  bottom: 10px;
+}
+.banner .slick-prev,
+.banner .slick-next {
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.banner .slicl-next {
+  right: 150px;
+}
+.banner .slick-prev {
+  left: 15px important;
 }

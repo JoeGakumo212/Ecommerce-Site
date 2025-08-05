@@ -2,18 +2,29 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import { FaHeart, FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa';
+import {
+  FaBars,
+  FaHeart,
+  FaLock,
+  FaSearch,
+  FaShoppingCart,
+  FaUser,
+} from 'react-icons/fa';
 
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import MenuTabs from './MenuTabs';
+import Profile from './Profile';
 
 const Headers = () => {
   const pathname = usePathname();
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(true);
   return (
     <div className="bg-white shadow-md sticky top-0 z-50">
-      <div className="container flex px-4 items-center justify-between ma-auto">
-        <div className="flex items-center space-x-8">
+      <div className="xl:container flex px-2 xl:px-4 items-center justify-between mx-auto">
+        <div className="flex items-center space-x-4 xl:space-x-8">
+          <div className="flex items-center lg:hidden cursor-pointer">
+            <FaBars className="text-2xl text-black" />
+          </div>
           <Link href="/" className="flex items-center space-x-3 py-4">
             <FaShoppingCart className="text-[#f76411] text-3xl" />
             <div className="font-bold">
@@ -26,7 +37,8 @@ const Headers = () => {
               <span className="text-2xl font-semibold text-gray-800">ing</span>
             </div>
           </Link>
-          <div className="flex items-center space-x-8 py-4">
+
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8 py-4">
             <Link
               href={'/'}
               className={`${
@@ -54,24 +66,25 @@ const Headers = () => {
               Offers
             </Link>{' '}
           </div>
-          <div className="flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-3 xl:space-x-6">
             <div className="relative">
               <input
                 type="text"
                 placeholder="Search..."
                 className="pl-10 pr-4 py-2 rounded-full bg-gray-100 focus:outline-none text-gray-800"
               />
-              <FaSearch className="absolute left-3 top-1/2 text-gray-400 transform -translate-y-1/2 " />
+              <FaSearch className="absolute left-3 top-1/2 text-gray-400 transform -translate-y-1/2 text-black" />
             </div>
+
             <div className="relative group me-4 py-4 text-black">
               <div className="flex items-center space-x-2 cursor-pointer">
                 <img src="/english.png" alt="flag" className="h-5" />
-                <span>English</span>
+                <span className="font-semibold">English</span>
                 <MdOutlineKeyboardArrowDown className="text-xl ms-3" />
               </div>
-              <div className="absolute top-14 left-[1px] w-48 bg-white border rounded shadow-lg hidden group-hover:block">
-                <button className="flex items-center space-x-3">
-                  <img src="/english.png" alt="flag" />
+              <div className="absolute top-14 left-[1px] p-3 w-48 bg-white border rounded shadow-lg hidden group-hover:block">
+                <button className="flex items-center space-x-3 font-semibold">
+                  <img src="/english.png" alt="flag" className="h-5 me-3" />
                   English
                 </button>
               </div>
@@ -101,11 +114,23 @@ const Headers = () => {
                     </Link>
                   </div>
                 ) : (
-                  ''
+                  <Profile
+                    user={{
+                      avatarUrl: '/profile.png',
+                      name: 'Joe Gakumo ',
+                      phone: '+254791279635',
+                    }}
+                  />
                 )}
               </div>
             </div>
+            <div className="bg-black p-3 rounded-full cursor-pointer">
+              <FaLock className="text-white text-xl" />
+            </div>
           </div>
+        </div>
+        <div className="flex lg:hidden items-center ml-2">
+          <FaSearch className="text-2xl text-black cursor-pointer" />
         </div>
       </div>
     </div>
