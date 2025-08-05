@@ -66,7 +66,7 @@ const MenuTabs = () => {
                   <li key={index}>
                     <Link
                       href={`/products?category=${item?.toLowerCase()}`}
-                      className="text-black"
+                      className="text-black text-md"
                     >
                       {item}
                     </Link>
@@ -81,7 +81,7 @@ const MenuTabs = () => {
                   <li key={index}>
                     <Link
                       href={`/products?category=${item?.toLowerCase()}`}
-                      className="text-black"
+                      className="text-black text-md"
                     >
                       {item}
                     </Link>
