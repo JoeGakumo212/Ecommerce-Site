@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
 import {
+  FaEnvelope,
   FaFacebook,
   FaInbox,
   FaInstagram,
+  FaMapMarkedAlt,
+  FaPhone,
   FaShoppingCart,
   FaTwitter,
-  FaVoicemail,
   FaWhatsapp,
 } from 'react-icons/fa';
 import { FaHouse } from 'react-icons/fa6';
@@ -14,9 +16,9 @@ import { FaHouse } from 'react-icons/fa6';
 const Footer = () => {
   return (
     <footer className="py-12 bg-[#1f1f39] text-white">
-      <div className="container px-2 xl:px-4 mx-auto">
-        <div className="flex flex-col gap-4 md:flex-row justify-between items-center">
-          <div className="mb-8 md:mb-0 w-1/4 ">
+      <div className="xl:container px-2 xl:px-4 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+          <div>
             <Link href="/" className="flex items-center space-x-3 py-4">
               <FaShoppingCart className="text-[#f76411] text-3xl" />
               <div className="font-bold flex items-center space-x-1">
@@ -33,9 +35,10 @@ const Footer = () => {
             <form className="flex items-center mb-4 rounded-full p-1 bg-white">
               <input
                 type="email"
-                className="p-2 focus:outline-none rounded-l-full text-black outline-none"
+                className="flex-1 p-2 pl-4 rounded-l-full text-black outline-none"
                 placeholder="Your Email Address..."
                 name="newsletter"
+                required
               />
               <button
                 type="submit"
@@ -71,7 +74,7 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <div className="mb-8 md:mb-0 w-1/4">
+          <div>
             <h3 className="font-bold mb-2">Support</h3>
             <ul>
               <li>
@@ -85,13 +88,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/RETURN-EXCHANGE" className="hover:text-[#ff4500]">
+                  Return & Refund Policy
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-[#ff4500]">
                   Contact Us
                 </Link>
               </li>
             </ul>
           </div>
-          <div className="mb-8 md:mb-0 w-1/4">
+          <div>
             <h3 className="font-bold mb-2">Legal</h3>
             <ul>
               <li>
@@ -104,31 +112,39 @@ const Footer = () => {
                   Terms of Service
                 </Link>
               </li>
+              <li>
+                <Link href="/about-us" className="hover:text-[#ff4500]">
+                  About Us
+                </Link>
+              </li>
             </ul>
           </div>
-          <div className="mb-8 md:mb-0 w-1/4">
-            <h3 className="font-bold mb-2">Contact</h3>
-            <ul>
-              <li>
-                <span className="text-gray-300">
-                  <FaHouse className="inline mr-1 " size={20} />
-                  Address: 1234 Joe&apos;s Street,
-                  <br />
-                  House: 25, Road No: 2,
-                  <br />
-                  Block A, Mirpur-1, Dhaka 1216
-                </span>
-              </li>
-              <li>
-                <span className="text-gray-300">
-                  <FaInbox className="inline mr-1" size={20} /> Email:
-                  support@joeshopking.com
-                </span>
-              </li>
-              <li>
-                <span className="text-gray-300">Phone: +254 791 279 635</span>
-              </li>
-            </ul>
+          <div>
+            <h3 className="font-bold mb-2">Contact Us</h3>
+            <p className="mb-1 flex items-center gap-3">
+              <FaMapMarkedAlt className="text-[#ff4500]" />
+              House: 1234 Street Nakuru, City, State, 56789
+            </p>
+            <p className="mb-1 flex items-center gap-3">
+              <FaEnvelope className="text-[#ff4500]" />
+              info@sk.com
+            </p>
+            <p className="mb-1 flex items-center gap-3">
+              <FaPhone className="text-[#ff4500]" />
+              +254 791279635
+            </p>
+            <div className="flex space-x-3 mt-4">
+              <img
+                src="/play-store.png"
+                alt="play store"
+                className="h-[400]px] w-[130px]"
+              />
+              <img
+                src="app-store.png"
+                alt="app store"
+                className="h-[400]px] w-[130px]"
+              />
+            </div>
           </div>
         </div>
       </div>

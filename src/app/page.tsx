@@ -3,7 +3,7 @@ import CategoryCarousel from '@/components/Home/CategoryCarousel';
 import PopularBrands from '@/components/Home/PopularBrands';
 import ProductCard from '@/components/Home/ProductCard';
 import PromotionCards from '@/components/Home/PromotionCards';
-import Footer from '@/components/Layout/Footer';
+
 import { FaClock, FaLock, FaShippingFast } from 'react-icons/fa';
 import { FaBoxOpen } from 'react-icons/fa6';
 
@@ -88,7 +88,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
