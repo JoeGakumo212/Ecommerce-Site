@@ -88,12 +88,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/RETURN-EXCHANGE" className="hover:text-[#ff4500]">
+                <Link href="/return" className="hover:text-[#ff4500]">
                   Return & Refund Policy
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#ff4500]">
+                <Link href="/help" className="hover:text-[#ff4500]">
                   Contact Us
                 </Link>
               </li>
@@ -113,7 +113,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/about-us" className="hover:text-[#ff4500]">
+                <Link href="/aboutus" className="hover:text-[#ff4500]">
                   About Us
                 </Link>
               </li>
